@@ -1,0 +1,105 @@
+@import "../../baseStyles/setings.scss";
+@import "../../baseStyles/adaptive-settings.scss";
+@import "../../baseStyles/mixins.scss";
+
+.header {
+  min-height: 80px;
+  margin-bottom: 50px;
+  display: flex;
+  background-color: $background-base;
+  .row {
+    align-items: center;
+    @include baceContainer;
+    width: 100%;
+    margin: 0 auto;
+    @media screen and (max-width: 767px) {
+      & > div {
+        margin: 10px 0;
+      }
+    }
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+      background-image: url(../../img/icon.png);
+      height: 50px;
+      width: 50px;
+    }
+  }
+  &__text-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__text-input {
+    position: relative;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    z-index: 2;
+  }
+  &__text-button {
+    @include btn;
+    position: relative;
+    border-left: 0;
+  }
+  &__catalog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      @include link;
+    }
+  }
+  &__profile {
+    button {
+      @include btn;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.catalog{
+    margin-bottom: 50px;
+    .row {
+      @include baceContainer;
+      margin: 0 auto;
+      justify-content: center;
+    }
+    &__title {
+      text-align: center;
+      margin-bottom: 60px;
+      @include mq("xl", max) {
+        margin-bottom: 30px;
+      }
+    }
+    &__card {
+      @include card;
+      padding-left: 95px;
+      padding-right: 95px;
+      padding-bottom: 58px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+}
+
+.footer {
+  background-color: $background-base;
+
+  .row {
+    height: 180px;
+    @include baceContainer;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  a {
+    @include link;
+  }
+}

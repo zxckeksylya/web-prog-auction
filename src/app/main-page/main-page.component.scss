@@ -1,0 +1,227 @@
+@import "../../baseStyles/setings.scss";
+@import "../../baseStyles/adaptive-settings.scss";
+@import "../../baseStyles/mixins.scss";
+
+.header {
+  min-height: 80px;
+  margin-bottom: 50px;
+  display: flex;
+  background-color: $background-base;
+  .row {
+    align-items: center;
+    @include baceContainer;
+    width: 100%;
+    margin: 0 auto;
+    @media screen and (max-width: 767px) {
+      & > div {
+        margin: 10px 0;
+      }
+    }
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+      background-image: url(../../img/icon.png);
+      height: 50px;
+      width: 50px;
+    }
+  }
+  &__text-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__text-input {
+    position: relative;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    z-index: 2;
+  }
+  &__text-button {
+    @include btn;
+    position: relative;
+    border-left: 0;
+  }
+  &__catalog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      @include link;
+    }
+  }
+  &__profile {
+    button {
+      @include btn;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.intro {
+  margin-bottom: 50px;
+
+  .row {
+    @include baceContainer;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  &__card {
+    @include card;
+    display: flex;
+    justify-content: center;
+  }
+  &__img {
+    background-image: url(../../img/ludovik.jpg);
+    width: 350px;
+    height: 502px;
+    @include mq("xl", max) {
+      display: none;
+    }
+  }
+  &__text {
+    color: $text-base;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    @include mq("xl", max) {
+      padding-right: 0;
+      align-items: center;
+      text-align: center;
+    }
+    button {
+      margin-top: 20px;
+      @include btn;
+    }
+  }
+}
+.best-sellers {
+    margin-bottom: 50px;
+  .row {
+    @include baceContainer;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: 60px;
+    @include mq("xl", max) {
+      margin-bottom: 30px;
+    }
+  }
+  &__card {
+    @include card;
+    padding-left: 95px;
+    padding-right: 95px;
+    padding-bottom: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__sellers {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  &__seller {
+    .icon {
+      background-image: url(../../img/gerald.png);
+      height: 160px;
+      width: 160px;
+      margin-bottom: 35px;
+    }
+    .title {
+      text-align: center;
+      font-size: 16px;
+      font-weight: $text-bold;
+      margin-bottom: 20px;
+
+      @include mq("xl", max) {
+        font-size: 14px;
+      }
+      @include mq("md", max) {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.best-prod {
+    margin-bottom: 50px;
+  .row {
+    @include baceContainer;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: 60px;
+    @include mq("xl", max) {
+      margin-bottom: 30px;
+    }
+  }
+  &__card {
+    @include card;
+    padding-left: 95px;
+    padding-right: 95px;
+    padding-bottom: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__products {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  &__product {
+    .icon {
+      background-image: url(../../img/prod.png);
+      height: 230px;
+      width: 160px;
+      margin-bottom: 35px;
+    }
+    .title {
+      text-align: center;
+      font-size: 16px;
+      font-weight: $text-bold;
+      margin-bottom: 20px;
+
+      @include mq("xl", max) {
+        font-size: 14px;
+      }
+      @include mq("md", max) {
+        font-size: 12px;
+      }
+    }
+  }
+}
+.footer{
+    background-color: $background-base;
+
+    .row{
+ 
+        height: 180px;
+        @include baceContainer;
+        justify-content: center;
+        margin: 0 auto;
+
+    }
+    a{
+        @include link;
+    }
+}

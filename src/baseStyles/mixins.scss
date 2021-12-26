@@ -1,0 +1,69 @@
+@mixin mq ($width,$type:min){
+    @if map-has-key($adaptive-breakpoints, $width ){
+        $width: map-get($adaptive-breakpoints, $width );
+        @if $type == max {
+            $width:$width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width){
+            @content;
+        }
+    }
+}
+
+@mixin btn {
+    color: $text-button;
+    background-color: $background-button;
+    border:2px solid $text-button;
+    min-width: 80px;
+    min-height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    &:hover{
+        color: $background-button;
+        background-color: $background-secondary;
+        border-color:  $background-button;
+    }
+    &:active{
+        color: $background-secondary;
+        background-color: $background-button;
+        border-color: $background-secondary;
+    }
+    &:disabled{
+        color: $text-base;
+        background-color: $text-button;
+        border-color: #736b60;
+        cursor: not-allowed;
+    }
+}
+
+@mixin link {
+    text-decoration: none;
+    &:link{
+        color:$background-secondary;
+    }
+    &:visited{
+        color:$background-secondary;
+    }
+    &:hover{
+        color:darken($background-secondary, 20) ;
+    }
+    &:active{
+        color:lighten($background-secondary, 20) ;
+    }
+}
+
+@mixin baceContainer {
+    max-width: 1200px;
+}
+
+@mixin card {
+    background-color: $background-base;
+        border: 2px solid $background-secondary;
+        border-radius: 50px;
+        min-height: 100px;
+        padding: 68px 0;
+        justify-content: space-around;
+}
