@@ -1,0 +1,172 @@
+@import "../../baseStyles/setings.scss";
+@import "../../baseStyles/adaptive-settings.scss";
+@import "../../baseStyles/mixins.scss";
+
+.header {
+  min-height: 80px;
+  margin-bottom: 50px;
+  display: flex;
+  background-color: $background-base;
+  .row {
+    align-items: center;
+    @include baceContainer;
+    width: 100%;
+    margin: 0 auto;
+    @media screen and (max-width: 767px) {
+      & > div {
+        margin: 10px 0;
+      }
+    }
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+      background-image: url(../../img/icon.png);
+      height: 50px;
+      width: 50px;
+    }
+  }
+  &__text-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__text-input {
+    position: relative;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    z-index: 2;
+  }
+  &__text-button {
+    @include btn;
+    position: relative;
+    border-left: 0;
+  }
+  &__catalog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      @include link;
+    }
+  }
+  &__profile {
+    button {
+      @include btn;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.profile{
+    margin-bottom: 50px;
+    .row {
+        @include baceContainer;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    &__card {
+      @include card;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    &__parameters {
+        width: 100%;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @include mq("md", max) {
+          align-items: center;
+        }
+    }
+    &__img {
+      background-image: url(../../img/gerald_big.png);
+      height: 350px;
+      background-repeat: no-repeat;
+      background-position: center;
+      @include mq("xl", max) {
+        background-image: url(../../img/gerald.png);
+        background-repeat: no-repeat;
+        width: 160px;
+        height: 230px;
+      }
+    }
+    &__title {
+        h1{
+            margin: 0;
+        }
+      font-size: 28px;
+      margin-bottom: 30px;
+      text-align: center;
+      @include mq("xl", max) {
+        font-size: 24px;
+      }
+      @include mq("md", max) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+    }
+    &__data {
+      height: 100%;
+      @include data;
+      button{
+          max-width: 165px;
+          @include btn;
+      }
+      .data__bottom{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+    }
+    &__buttons{
+        width: 100%;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @include mq("md", max) {
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 100%;
+        }
+        button{
+
+            @include btn;
+            height: 120px;
+            flex:1;
+            margin: 20px;
+        }
+    }
+}
+
+
+.footer{
+    background-color: $background-base;
+
+    .row{
+ 
+        height: 180px;
+        @include baceContainer;
+        justify-content: center;
+        margin: 0 auto;
+
+    }
+    a{
+        @include link;
+    }
+}
